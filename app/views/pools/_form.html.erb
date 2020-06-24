@@ -13,22 +13,25 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :readonly => true, :value => current_user.name%>
   </div>
 
   <div class="field">
     <%= form.label :contact %>
-    <%= form.text_field :contact %>
+    <%= form.text_field :contact, :required => true, :placeholder => 'Please enter a 10-digit mobile number' %>
   </div>
 
   <div class="field">
     <%= form.label :from %>
-    <%= form.text_field :from %>
+    <%= form.select :from,['Mangalore International Airport - IXE',
+                                         'Mangalore Central - MAQ',
+                                         'Mangalore Junction - MAJ',
+                                         'Surathkal Railway Station - SL']%>
   </div>
 
   <div class="field">
     <%= form.label :when %>
-    <%= form.datetime_select :when %>
+    <%= form.datetime_select :when, { start_year: Date.today.year} %>
   </div>
 
   <div class="actions">
