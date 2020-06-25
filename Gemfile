@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'date_validator'
+
+gem 'formtastic-bootstrap'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :contact %>
-    <%= form.text_field :contact, :required => true, :placeholder => 'Please enter a 10-digit mobile number' %>
+    <%= form.text_field :contact, :required => true, :size => "30", :placeholder => 'Please enter a 10-digit mobile number' %>
   </div>
 
   <div class="field">
@@ -31,7 +31,7 @@
 
   <div class="field">
     <%= form.label :when %>
-    <%= form.datetime_select :when, { start_year: Date.today.year} %>
+    <%= form.datetime_select :when,  :label => { day:  'Select date', month: true, year: true } %>
   </div>
 
   <div class="actions">

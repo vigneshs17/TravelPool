@@ -4,7 +4,7 @@ class PoolsController < ApplicationController
   # GET /pools
   # GET /pools.json
   def index
-    @pools = Pool.all
+    @pools = Pool.order(:when)
   end
 
   # GET /pools/1
