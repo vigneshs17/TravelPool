@@ -20,5 +20,7 @@
   <%= @pool.when %>
 </p>
 
-<%= link_to 'Edit', edit_pool_path(@pool) %> |
+<% if current_user.id==@pool.user_id %>
+  <%= link_to 'Edit', edit_pool_path(@pool) %> |
+<% end %>
 <%= link_to 'Back', pools_path %>

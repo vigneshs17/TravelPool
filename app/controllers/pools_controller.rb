@@ -1,6 +1,8 @@
 class PoolsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pool, only: [:show, :edit, :update, :destroy]
+  before_action :check_permission, only: [:edit, :update, :destroy]
+
   # GET /pools
   # GET /pools.json
   def index
@@ -71,5 +73,14 @@ class PoolsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def pool_params
       params.require(:pool).permit(:name, :contact, :from, :when)
+    end
+
+    # Only allow the user who created the pool to edit it or delete it
+    def correct_user
+      current_user.id == @pool.user_id
+    end
+
+    def check_permission
+      redirect_to pools_path, error: 'You are not authorised to edit/delete this pool' unless correct_user
     end
 end
