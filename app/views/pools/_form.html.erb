@@ -4,9 +4,9 @@
       <h2><%= pluralize(pool.errors.count, "error") %> prohibited this pool from being saved:</h2>
 
       <ul>
-      <% pool.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% pool.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :from %>
-    <%= form.select :from,['Mangalore International Airport - IXE',
+    <%= form.label :where %>
+    <%= form.select :where,['Mangalore International Airport - IXE',
                                          'Mangalore Central - MAQ',
                                          'Mangalore Junction - MAJ',
                                          'Surathkal Railway Station - SL']%>
@@ -31,7 +31,7 @@
 
   <div class="field">
     <%= form.label :when %>
-    <%= form.datetime_select :when,  :label => { day:  'Select date', month: true, year: true } %>
+    <%= form.text_field :when , data: {behavior: "flatpickr" }, :placeholder => 'Please use 24-hour format' %>
   </div>
 
   <div class="actions">

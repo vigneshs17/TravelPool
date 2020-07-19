@@ -1,13 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   name: MyString
   contact: 
-  from: MyString
-  when: 2020-06-24 20:20:11
+  where: MyString
+  when: 2020-07-08 20:56:20
 
 two:
   name: MyString
   contact: 
-  from: MyString
-  when: 2020-06-24 20:20:11
+  where: MyString
+  when: 2020-07-08 20:56:20

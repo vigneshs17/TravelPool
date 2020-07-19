@@ -15,9 +15,9 @@ class PoolsTest < ApplicationSystemTestCase
     click_on "New Pool"
 
     fill_in "Contact", with: @pool.contact
-    fill_in "From", with: @pool.from
     fill_in "Name", with: @pool.name
     fill_in "When", with: @pool.when
+    fill_in "Where", with: @pool.where
     click_on "Create Pool"
 
     assert_text "Pool was successfully created"
@@ -29,9 +29,9 @@ class PoolsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Contact", with: @pool.contact
-    fill_in "From", with: @pool.from
     fill_in "Name", with: @pool.name
     fill_in "When", with: @pool.when
+    fill_in "Where", with: @pool.where
     click_on "Update Pool"
 
     assert_text "Pool was successfully updated"

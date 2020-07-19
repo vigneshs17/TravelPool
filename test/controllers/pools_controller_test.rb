@@ -17,7 +17,7 @@ class PoolsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create pool" do
     assert_difference('Pool.count') do
-      post pools_url, params: { pool: { contact: @pool.contact, from: @pool.from, name: @pool.name, when: @pool.when } }
+      post pools_url, params: { pool: { contact: @pool.contact, name: @pool.name, when: @pool.when, where: @pool.where } }
     end
 
     assert_redirected_to pool_url(Pool.last)
@@ -34,7 +34,7 @@ class PoolsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update pool" do
-    patch pool_url(@pool), params: { pool: { contact: @pool.contact, from: @pool.from, name: @pool.name, when: @pool.when } }
+    patch pool_url(@pool), params: { pool: { contact: @pool.contact, name: @pool.name, when: @pool.when, where: @pool.where } }
     assert_redirected_to pool_url(@pool)
   end
 

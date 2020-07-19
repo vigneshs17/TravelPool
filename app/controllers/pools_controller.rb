@@ -72,7 +72,7 @@ class PoolsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pool_params
-      params.require(:pool).permit(:name, :contact, :from, :when)
+      params.require(:pool).permit(:name, :contact, :where, :when)
     end
 
     # Only allow the user who created the pool to edit it or delete it
