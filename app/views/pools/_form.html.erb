@@ -22,16 +22,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :where %>
-    <%= form.select :where,['Mangalore International Airport - IXE',
+    <%= form.label :destination %>
+    <%= form.select :destination,['Mangalore International Airport - IXE',
                                          'Mangalore Central - MAQ',
                                          'Mangalore Junction - MAJ',
                                          'Surathkal Railway Station - SL']%>
   </div>
 
   <div class="field">
-    <%= form.label :when %>
-    <%= form.text_field :when , data: {behavior: "flatpickr" }, :placeholder => 'Please use 24-hour format' %>
+    <%= form.label :be_there_at %>
+    <%= form.text_field :be_there_at , data: {behavior: "flatpickr" }, :placeholder => 'Please use 24-hour format' %>
   </div>
 
   <div class="actions">

@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+ .tableClass th .current {
+    padding-right: 12px;
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+  
+  .tableClass th .asc {
+    background-image: url("app/assets/images/up_arrow.gif");
+  }
+  
+  .tableClass th .desc {
+    background-image: url("app/assets/images/down_arrow.gif");
+  }

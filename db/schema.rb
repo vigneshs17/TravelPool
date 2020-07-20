@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 2020_07_08_153137) do
   create_table "pools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.bigint "contact"
-    t.string "where"
-    t.datetime "when"
+    t.string "destination"
+    t.datetime "be_there_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false

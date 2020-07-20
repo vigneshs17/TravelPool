@@ -2,13 +2,13 @@
 
 <h1>Pools</h1>
 
-<table>
+<table class="tableClass">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Contact</th>
-      <th>Where</th>
-      <th>When</th>
+      <th><%= sortable "name" %></th>
+      <th><%= sortable "contact" %></th>
+      <th><%= sortable "destination", "Where" %></th>
+      <th><%= sortable "be_there_at", "When" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,8 +18,8 @@
       <tr>
         <td><%= pool.name %></td>
         <td><%= pool.contact %></td>
-        <td><%= pool.where %></td>
-        <td><%= pool.when %></td>
+        <td><%= pool.destination %></td>
+        <td><%= pool.be_there_at %></td>
         <td><%= link_to 'Show', pool %></td>
         <td>
           <% if current_user.id==pool.user_id %>

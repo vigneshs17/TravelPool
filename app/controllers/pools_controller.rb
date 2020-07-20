@@ -2,11 +2,12 @@ class PoolsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pool, only: [:show, :edit, :update, :destroy]
   before_action :check_permission, only: [:edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /pools
   # GET /pools.json
   def index
-    @pools = Pool.order(:when)
+    @pools = Pool.order(sort_column + " " + sort_direction)
   end
 
   # GET /pools/1
@@ -72,7 +73,7 @@ class PoolsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pool_params
-      params.require(:pool).permit(:name, :contact, :where, :when)
+      params.require(:pool).permit(:name, :contact, :destination, :be_there_at)
     end
 
     # Only allow the user who created the pool to edit it or delete it
@@ -82,5 +83,13 @@ class PoolsController < ApplicationController
 
     def check_permission
       redirect_to pools_path, error: 'You are not authorised to edit/delete this pool' unless correct_user
+    end
+
+    def sort_column
+      Pool.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
