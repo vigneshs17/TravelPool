@@ -14,16 +14,26 @@
  *= require_self
  */
 
+ .tableClass a {
+    text-decoration: none;
+    color: black;
+ }
+
+ .tableClass a:hover{
+    background-color: white;
+}
  .tableClass th .current {
     padding-right: 12px;
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: right;
   }
   
   .tableClass th .asc {
-    background-image: url("app/assets/images/up_arrow.gif");
+    background: url(https://image.flaticon.com/icons/svg/61/61032.svg) no-repeat 99%;
+    background-size: 10px 10px;
   }
   
   .tableClass th .desc {
-    background-image: url("app/assets/images/down_arrow.gif");
+    background: url(https://image.flaticon.com/icons/svg/61/61041.svg) no-repeat 99%;
+    background-size: 10px 10px;
   }
