@@ -7,7 +7,7 @@ class PoolsController < ApplicationController
   # GET /pools
   # GET /pools.json
   def index
-    @pools = Pool.order(sort_column + " " + sort_direction).paginate(:per_page => 50, :page => params[:page])
+    @pools = Pool.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 50, :page => params[:page])
   end
 
   # GET /pools/1
