@@ -17,7 +17,7 @@
 
 <p>
   <strong>When:</strong>
-  <%= @pool.be_there_at %>
+  <%= @pool.be_there_at.strftime("%B %d, %Y %H:%M") %>
 </p>
 
 <% if current_user.id==@pool.user_id %>

@@ -27,7 +27,7 @@
         <td><%= pool.name %></td>
         <td><%= pool.contact %></td>
         <td><%= pool.destination %></td>
-        <td><%= pool.be_there_at %></td>
+        <td><%= pool.be_there_at.strftime("%B %d, %Y %H:%M") %></td>
         <td><%= link_to 'Show', pool %></td>
         <td>
           <% if current_user.id==pool.user_id %>
