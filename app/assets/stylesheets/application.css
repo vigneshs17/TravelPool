@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ @font-face {
+  font-family: '45 Light';
+  src: url('app/assets/fonts/HelveticaNeue-Light.otf')
+}
  .tableClass a {
     text-decoration: none;
     color: black;

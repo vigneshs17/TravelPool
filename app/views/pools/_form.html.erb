@@ -1,4 +1,4 @@
-<%= form_with(model: pool, local: true) do |form| %>
+<%= form_with(model: pool, local: true, :class=>"form my-2 my-md-0") do |form| %>
   <% if pool.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pool.errors.count, "error") %> prohibited this pool from being saved:</h2>
@@ -11,30 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field ">
     <%= form.label :name %>
-    <%= form.text_field :name, :readonly => true, :value => current_user.name%>
+    <%= form.text_field :name, :readonly => true, :value => current_user.name, :class=> "form-control", :style=>"width:auto;" %>
   </div>
 
   <div class="field">
     <%= form.label :contact %>
-    <%= form.text_field :contact, :required => true, :size => "30", :placeholder => 'Please enter a 10-digit mobile number' %>
+    <%= form.text_field :contact, :required => true, :size => "30", :placeholder => 'Please enter a 10-digit mobile number', :class=> "form-control", :style=>"width:auto;"  %>
   </div>
 
   <div class="field">
     <%= form.label :destination %>
+    <br>
     <%= form.select :destination,['Mangalore International Airport - IXE',
                                          'Mangalore Central - MAQ',
                                          'Mangalore Junction - MAJ',
-                                         'Surathkal Railway Station - SL']%>
+                                         'Surathkal Railway Station - SL'], :class=> "form-control", :style=>"width:auto;"  %>
   </div>
 
   <div class="field">
     <%= form.label :be_there_at %>
-    <%= form.text_field :be_there_at , data: {behavior: "flatpickr" }, :placeholder => 'Please use 24-hour format' %>
+    <br>
+    <%= form.text_field :be_there_at , data: {behavior: "flatpickr" }, :placeholder => 'Click here to choose the date and time.', :style=>"width:auto;"  %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :"Create pool", class: 'btn btn-success'%>
   </div>
 <% end %>
